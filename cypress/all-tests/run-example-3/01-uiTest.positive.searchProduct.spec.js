@@ -2,7 +2,7 @@ import SearchResultsPage from "../../page-objects/searchResultsPage"
 import MainPage from "../../page-objects/mainPage"
 
 describe('Google Market tests', () => {
-    it('Positive: User is able to find product by name C57', () => {
+    it('Positive: User is able to find product by name C12', () => {
         cy.fixture('product').then(productData => {
             MainPage.open()
             cy.log('WHEN User clicks search icon')

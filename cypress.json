@@ -9,11 +9,10 @@
   },
   "reporter": "cypress-testrail-logs-screenshots",
   "reporterOptions": {
-    "domain": "demodemodemo.testrail.com",
-    "username": "kateyurasova@gmail.com",
-    "password": "Demodemodemo2020!",
-    "projectId": 2,
+    "domain": "integrationcypress.testrail.io",
+    "username": "arth.p@mail.ru",
+    "password": "stalker82",
+    "projectId": 3,
     "active": true
-  },
-  "projectId": "6cujwd"
+  }
 }

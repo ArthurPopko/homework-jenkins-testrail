@@ -11,7 +11,7 @@ describe('Tests for Delete pet endpoint', () => {
             })
         })
     });
-    it('Positive: Delete the same pet entity twice C53', () => {
+    it('Positive: Delete the same pet entity twice C13', () => {
         createPet(getPetRequestData()).then(response => {
             let petId = response.body.id
             deletePet(petId).then(response => {
@@ -22,13 +22,13 @@ describe('Tests for Delete pet endpoint', () => {
             })
         })
     });
-    it('Negative: Nonexistent id C54', () => {
+    it('Negative: Nonexistent id C14', () => {
         deletePet(Chance().integer(), false).then(response => {
             expect(response.status).to.eq(404);
             expect(response.status).to.eq(404, 'Not found');
         })
     })
-    it('Negative: Invalid pet Id (string instead of integer) C55', () => {
+    it('Negative: Invalid pet Id (string instead of integer) C15', () => {
         deletePet('anyStringValue&^', false).then(response => {
             console.log(response)
             expect(response.status).to.eq(404);
@@ -36,7 +36,7 @@ describe('Tests for Delete pet endpoint', () => {
 
         })
     })
-    it('Negative: No ID in parameter C56', () => {
+    it('Negative: No ID in parameter C16', () => {
         deletePet('', false).then(response => {
             expect(response.status).to.eq(405);
             expect(response.statusText).to.eq('Method Not Allowed');

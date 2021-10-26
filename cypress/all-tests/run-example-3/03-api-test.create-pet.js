@@ -7,15 +7,15 @@ describe('Create new Pet', () => {
 
     let testingData = [
         {
-            description: 'All fields are filled in with min values C13',
+            description: 'All fields are filled in with min values C17',
             requestData: getPetRequestData(DATA_OPTIONS.MAX)
         },
         {
-            description: 'All fields are filled in with max values C14',
+            description: 'All fields are filled in with max values C18',
             requestData: getPetRequestData(DATA_OPTIONS.AVERAGE)
         },
         {
-            description: 'All fields are filled in with average values C15',
+            description: 'All fields are filled in with average values C19',
             requestData: getPetRequestData(DATA_OPTIONS.MIN)
         }
     ];
@@ -33,7 +33,7 @@ describe('Create new Pet', () => {
         })
     });
 
-    it('Positive: Only required fields (name and photoUrl) C43', () => {
+    it('Positive: Only required fields (name and photoUrl) C20', () => {
         let requestData = getPetRequestData(DATA_OPTIONS.AVERAGE, true)
         createPet(requestData).then(response => {
             expect(response.status).to.eq(200);
@@ -42,26 +42,26 @@ describe('Create new Pet', () => {
             expect(response.body.photoUrls).to.deep.equal(requestData.photoUrls);
         })
     })
-    it('Negative: No values (empty body) C44', () => {
+    it('Negative: No values (empty body) C21', () => {
         let requestData = {}
         createPet(requestData).then(response => {
             expect(response.status).to.eq(400);
             expect(response.statusText).to.eq('Bad Request');
         })
     })
-    it('Negative: No body in request C45', () => {
+    it('Negative: No body in request C22', () => {
         cy.request({method: 'POST', url: `${API_URL}/pet`, failOnStatusCode: false}).then(response => {
             console.log(response)
             expect(response.status).to.eq(415);
         })
     })
-    it('Negative: Required fields are null C46', () => {
+    it('Negative: Required fields are null C23', () => {
         createPet({name: null, photoUrls: null}, false).then(response => {
             expect(response.status).to.eq(400);
             expect(response.statusText).to.eq('Bad Request');
         })
     })
-    it('Negative: Invalid pet status (numeric instead of valid string value) C47', () => {
+    it('Negative: Invalid pet status (numeric instead of valid string value) C24', () => {
         let requestData = getPetRequestData()
         requestData.status = 1
         createPet(requestData, false).then(response => {
@@ -69,7 +69,7 @@ describe('Create new Pet', () => {
             expect(response.message).to.eq('Invalid pet status value');
         })
     })
-    it('Negative: Invalid tag name (numeric instead of valid string value) C48', () => {
+    it('Negative: Invalid tag name (numeric instead of valid string value) C25', () => {
         let requestData = getPetRequestData()
         requestData.tags[0].name = 2
         createPet(requestData, false).then(response => {
@@ -77,7 +77,7 @@ describe('Create new Pet', () => {
             expect(response.message).to.eq('Invalid tag name value');
         })
     })
-    it('Negative: Invalid pet id (string valid instead of numeric value) C49', () => {
+    it('Negative: Invalid pet id (string valid instead of numeric value) C26', () => {
         let requestData = getPetRequestData()
         requestData.id = Chance().string()
         createPet(requestData, false).then(response => {
@@ -85,7 +85,7 @@ describe('Create new Pet', () => {
             expect(response.message).to.eq('Invalid pet id status value');
         })
     })
-    it('Negative: Invalid tag id (string valid instead of numeric value) C50', () => {
+    it('Negative: Invalid tag id (string valid instead of numeric value) C27', () => {
         let requestData = getPetRequestData()
         requestData.tags[0].id = Chance().string()
         createPet(requestData, false).then(response => {
@@ -93,7 +93,7 @@ describe('Create new Pet', () => {
             expect(response.statusText).to.eq('Bad Request');
         })
     })
-    it('Negative: Invalid category id (string valid instead of numeric value) C51', () => {
+    it('Negative: Invalid category id (string valid instead of numeric value) C28', () => {
         let requestData = getPetRequestData()
         requestData.category.id = Chance().string()
         createPet(requestData, false).then(response => {
