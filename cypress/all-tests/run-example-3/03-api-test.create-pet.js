@@ -7,15 +7,15 @@ describe('Create new Pet', () => {
 
     let testingData = [
         {
-            description: 'All fields are filled in with min values C17',
+            description: 'All fields are filled in with min values',
             requestData: getPetRequestData(DATA_OPTIONS.MAX)
         },
         {
-            description: 'All fields are filled in with max values C18',
+            description: 'All fields are filled in with max values',
             requestData: getPetRequestData(DATA_OPTIONS.AVERAGE)
         },
         {
-            description: 'All fields are filled in with average values C19',
+            description: 'All fields are filled in with average values',
             requestData: getPetRequestData(DATA_OPTIONS.MIN)
         }
     ];
@@ -77,7 +77,7 @@ describe('Create new Pet', () => {
             expect(response.message).to.eq('Invalid tag name value');
         })
     })
-    it('Negative: Invalid pet id (string valid instead of numeric value) C26', () => {
+    it('Negative: Invalid pet id (string valid instead of numeric value) C19', () => {
         let requestData = getPetRequestData()
         requestData.id = Chance().string()
         createPet(requestData, false).then(response => {
@@ -85,7 +85,7 @@ describe('Create new Pet', () => {
             expect(response.message).to.eq('Invalid pet id status value');
         })
     })
-    it('Negative: Invalid tag id (string valid instead of numeric value) C27', () => {
+    it('Negative: Invalid tag id (string valid instead of numeric value) C18', () => {
         let requestData = getPetRequestData()
         requestData.tags[0].id = Chance().string()
         createPet(requestData, false).then(response => {
@@ -93,16 +93,4 @@ describe('Create new Pet', () => {
             expect(response.statusText).to.eq('Bad Request');
         })
     })
-    it('Negative: Invalid category id (string valid instead of numeric value) C28', () => {
-        let requestData = getPetRequestData()
-        requestData.category.id = Chance().string()
-        createPet(requestData, false).then(response => {
-            expect(response.status).to.eq(400);
-            expect(response.statusText).to.eq('Bad Request');
-        })
-    })
-
-
 });
-
-
