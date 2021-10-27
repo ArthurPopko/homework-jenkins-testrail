@@ -16,8 +16,8 @@ module.exports = (on, config) => {
   // `config` is the resolved Cypress config
 }
 
-module.exports = (on, config) => {
-    on('task', {
-        failed: require('cypress-failed-log/src/failed')(),
-    })
-}
+// module.exports = (on, config) => {
+//     on('task', {
+//         failed: require('cypress-failed-log/src/failed')(),
+//     })
+// }
