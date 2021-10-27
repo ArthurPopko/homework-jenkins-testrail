@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'npm install'
+                'npm install'
             }
         }
         stage('parallel') {
@@ -13,17 +13,17 @@ pipeline {
                 // will use Cypress Dashboard to load balance any found spec files
                 stage('Run tests in parallel A') {
                     steps {
-                        sh 'npx cypress run --record --key fdfac40c-afdd-45f4-94f1-1b8d383175ac --parallel'
+                        'npx cypress run --record --key fdfac40c-afdd-45f4-94f1-1b8d383175ac --parallel'
                     }
                 }
                 stage('Run tests in parallel B') {
                     steps {
-                        sh 'npx cypress run --record --key fdfac40c-afdd-45f4-94f1-1b8d383175ac --parallel'
+                        'npx cypress run --record --key fdfac40c-afdd-45f4-94f1-1b8d383175ac --parallel'
                     }
                 }
                 stage('Run tests in parallel C') {
                     steps {
-                        sh 'npx cypress run --record --key fdfac40c-afdd-45f4-94f1-1b8d383175ac --parallel'
+                        'npx cypress run --record --key fdfac40c-afdd-45f4-94f1-1b8d383175ac --parallel'
                     }
                 }
             }
