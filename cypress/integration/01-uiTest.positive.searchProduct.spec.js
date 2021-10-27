@@ -1,5 +1,5 @@
-import SearchResultsPage from "../../page-objects/searchResultsPage"
-import MainPage from "../../page-objects/mainPage"
+import SearchResultsPage from "../page-objects/searchResultsPage"
+import MainPage from "../page-objects/mainPage"
 
 describe('Google Market tests', () => {
     it('Positive: User is able to find product by name C12', () => {

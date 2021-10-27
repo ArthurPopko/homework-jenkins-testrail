@@ -1,7 +1,7 @@
 import Chance from 'chance'
-import {createPet} from "../../service/petService"
-import {DATA_OPTIONS, getPetRequestData} from "../../helper/requestsDataGenerator"
-import {API_URL} from "../../service/apiSettings"
+import {createPet} from "../service/petService"
+import {DATA_OPTIONS, getPetRequestData} from "../helper/requestsDataGenerator"
+import {API_URL} from "../service/apiSettings"
 
 describe('Create new Pet', () => {
 

@@ -1,6 +1,6 @@
 {
   "baseUrl": "https://reqres.in",
-  "integrationFolder": "cypress/all-tests",
+  "integrationFolder": "cypress/integration",
   "projectId": "n6rhia",
   "defaultCommandTimeout": 10000,
   "env": {
@@ -8,12 +8,12 @@
     "petStoreApiUrl": "https://petstore.swagger.io/v2"
   },
   "reporter": "cypress-testrail-logs-screenshots",
-  "reporterOptions": {
-    "active": true,
+  "reporterOptions": { 
+	"testPlanId": 682,
+	"active": true,
     "domain": "integrationcypress.testrail.io",
     "username": "arth.p@mail.ru",
     "password": "stalker82",
-    "projectId": 3,
-    "testPlanId": 686
+    "projectId": 3
   }
 }
