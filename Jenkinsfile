@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    tools {nodejs "node16"} // helps with "npm not found issue"
 
     stages {
         stage('build') {
@@ -13,17 +14,17 @@ pipeline {
                 // will use Cypress Dashboard to load balance any found spec files
                 stage('Run tests in parallel A') {
                     steps {
-                        sh 'npx cypress run --record --key aa01e3dd-6263-4187-9393-ea9d1a92acc1 --parallel'
+                        sh 'npx cypress run --record --key a73472fd-473e-410b-9932-95f3dc9d20d0 --parallel'
                     }
                 }
                 stage('Run tests in parallel B') {
                     steps {
-                        sh 'npx cypress run --record --key aa01e3dd-6263-4187-9393-ea9d1a92acc1 --parallel'
+                        sh 'npx cypress run --record --key a73472fd-473e-410b-9932-95f3dc9d20d0 --parallel'
                     }
                 }
                 stage('Run tests in parallel C') {
                     steps {
-                        sh 'npx cypress run --record --key aa01e3dd-6263-4187-9393-ea9d1a92acc1 --parallel'
+                        sh 'npx cypress run --record --key a73472fd-473e-410b-9932-95f3dc9d20d0 --parallel'
                     }
                 }
             }
