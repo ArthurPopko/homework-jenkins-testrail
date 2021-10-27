@@ -9,7 +9,7 @@
   },
   "reporter": "cypress-testrail-logs-screenshots",
   "reporterOptions": {
-    "testPlanId": 690,
+    "testPlanId": 694,
     "active": true,
     "domain": "integrationcypress.testrail.io",
     "username": "arth.p@mail.ru",
