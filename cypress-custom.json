@@ -1,16 +1,16 @@
 {
   "baseUrl": "https://reqres.in",
   "integrationFolder": "cypress/integration",
-  "projectId": "n6rhia",
+  "projectId": "37snef",
   "defaultCommandTimeout": 10000,
   "env": {
     "iherbURL": "https://www.iherb.com",
     "petStoreApiUrl": "https://petstore.swagger.io/v2"
   },
   "reporter": "cypress-testrail-logs-screenshots",
-  "reporterOptions": { 
-	"testPlanId": 682,
-	"active": true,
+  "reporterOptions": {
+    "testPlanId": 682,
+    "active": true,
     "domain": "integrationcypress.testrail.io",
     "username": "arth.p@mail.ru",
     "password": "stalker82",
