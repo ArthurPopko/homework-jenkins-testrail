@@ -7,9 +7,9 @@ pipeline {
     choice(name: 'BROWSER', choices: ['chrome','edge','firefox'], description: "Choice the browser you want to run")
     }
 
-//     options{
-//     ansiColor('xterm')
-//     }
+    options{
+        ansiColor('xterm')
+    }
 
     stages {
         stage('build') {
@@ -31,6 +31,11 @@ pipeline {
                         sh 'npx cypress run --config-file cypress-custom.json --record --key a73472fd-473e-410b-9932-95f3dc9d20d0  --parallel'
                     }
                 }
+
+        post{
+            always{
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepALL: true, reportDir: 'cypress/report', reportFiles: 'index.html', reportName: 'HTML repor', reportTitles: ''])}
+        }
 //                 stage('Run tests in parallel B') {
 //                     steps {
 //                         sh 'npx cypress run --record --key a73472fd-473e-410b-9932-95f3dc9d20d0 --parallel'
