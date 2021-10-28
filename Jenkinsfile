@@ -11,7 +11,7 @@ pipeline {
 
         stage('Run tests in parallel A') {
             steps {
-                sh 'npx cypress run --config-file cypress-custom.json --record --key a73472fd-473e-410b-9932-95f3dc9d20d0  --parallel'
+                sh 'npx cypress run --record --key f0e802be-02b5-42f2-9c22-e61d7c44be18  --parallel'
             }
         }
     }
