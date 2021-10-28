@@ -2,10 +2,6 @@ pipeline {
     agent any
     tools {nodejs "node16"} // helps with "npm not found issue"
 
-    options{
-        ansiColor('xterm')
-    }
-
     stages {
         stage('build') {
             steps {
