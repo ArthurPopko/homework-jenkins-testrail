@@ -2,10 +2,21 @@ pipeline {
     agent any
     tools {nodejs "node16"} // helps with "npm not found issue"
 
+    parameters{
+    string(name: 'SPEC', defaultValue: "cypress/integration/**/**", description: "Enter the script path that you want to execute")
+    choice(name: 'BROWSER', choices: ['chrome','edge','firefox'], description: "Choice the browser you want to run")
+    }
+
+    options{
+    ansiColor('xterm')
+    }
+
     stages {
         stage('build') {
             steps {
                 sh 'npm install'
+                sh 'npm install cypress'
+                sh 'npm install cypress-testrail-logs-screenshots'
             }
         }
         stage('parallel') {
