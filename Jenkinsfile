@@ -15,8 +15,6 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm install'
-                sh 'npm install cypress'
-                sh 'npm install cypress-testrail-logs-screenshots'
             }
         }
         stage('parallel') {
