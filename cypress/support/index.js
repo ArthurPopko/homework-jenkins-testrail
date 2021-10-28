@@ -19,3 +19,6 @@
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+import './commands'
+require('cypress-failed-log');
