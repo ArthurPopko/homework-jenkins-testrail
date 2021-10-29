@@ -13,6 +13,8 @@ pipeline {
                     steps {
                         echo "Parallel A"
                         sh 'sh createTestPlan.sh true'
+                    }
+                    steps {
                         sh 'npx cypress run --config-file cypress-custom.json --record --key f0e802be-02b5-42f2-9c22-e61d7c44be18  --parallel'
                     }
                }
@@ -21,6 +23,8 @@ pipeline {
                     steps {
                         echo "Parallel B"
                         sh 'sh createTestPlan.sh true'
+                    }
+                    steps {
                         sh 'npx cypress run --config-file cypress-custom.json --record --key f0e802be-02b5-42f2-9c22-e61d7c44be18  --parallel'
                     }
                 }

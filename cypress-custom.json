@@ -8,8 +8,8 @@
     "petStoreApiUrl": "https://petstore.swagger.io/v2"
   },
   "reporter": "cypress-testrail-logs-screenshots",
-  "reporterOptions": {
-    "testPlanId": 698,
+  "reporterOptions": { 
+	"testPlanId": 766,
     "active": true,
     "domain": "integrationcypress.testrail.io",
     "username": "arth.p@mail.ru",
