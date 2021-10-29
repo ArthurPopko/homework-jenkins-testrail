@@ -12,7 +12,7 @@ pipeline {
                 stage('CREATE TEST PLAN A') {
                     steps {
                         echo "CREATE TEST PLAN A"
-                        sh 'sh createTestPlan.sh true'
+                        sh 'createTestPlan.sh true'
                     }
                 }
 
@@ -26,7 +26,7 @@ pipeline {
                stage('CREATE TEST PLAN B') {
                     steps {
                         echo "CREATE TEST PLAN B"
-                        sh 'sh createTestPlan.sh true'
+                        sh 'createTestPlan.sh true'
                     }
                }
 
