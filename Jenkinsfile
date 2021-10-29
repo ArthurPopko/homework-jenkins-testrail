@@ -31,13 +31,13 @@ pipeline {
 //                     }
 //                }
 
-               stage('RUN TESTS IN PARALLEL B') {
-                    steps {
-                        echo "RUN TESTS IN PARALLEL B"
-                        sh 'sh createTestPlan.sh true'
-                        sh 'npx cypress run --config-file cypress-custom.json --record --key f0e802be-02b5-42f2-9c22-e61d7c44be18  --parallel'
-                    }
-               }
+//                stage('RUN TESTS IN PARALLEL B') {
+//                     steps {
+//                         echo "RUN TESTS IN PARALLEL B"
+//                         sh 'sh createTestPlan.sh true'
+//                         sh 'npx cypress run --config-file cypress-custom.json --record --key f0e802be-02b5-42f2-9c22-e61d7c44be18  --parallel'
+//                     }
+//                }
             }
         }
     }
