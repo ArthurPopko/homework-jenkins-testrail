@@ -9,25 +9,33 @@ pipeline {
         }
         stage('parallel') {
             parallel {
-                stage('Run tests in parallel A') {
+                stage('CREATE TEST PLAN') {
                     steps {
-                        echo "Parallel A"
+                        echo "CREATE TEST PLAN A"
                         sh 'sh createTestPlan.sh true'
                     }
+                }
+
+                stage('RUN TESTS IN PARALLEL A') {
                     steps {
+                        echo "RUN TESTS IN PARALLEL A"
                         sh 'npx cypress run --config-file cypress-custom.json --record --key f0e802be-02b5-42f2-9c22-e61d7c44be18  --parallel'
                     }
                }
 
-                stage('Run tests in parallel B') {
+               stage('CREATE TEST PLAN') {
                     steps {
-                        echo "Parallel B"
+                        echo "CREATE TEST PLAN B"
                         sh 'sh createTestPlan.sh true'
                     }
+               }
+
+               stage('RUN TESTS IN PARALLEL B') {
                     steps {
+                        echo "RUN TESTS IN PARALLEL B"
                         sh 'npx cypress run --config-file cypress-custom.json --record --key f0e802be-02b5-42f2-9c22-e61d7c44be18  --parallel'
                     }
-                }
+               }
             }
         }
     }
