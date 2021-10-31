@@ -18,9 +18,15 @@ pipeline {
 
                 stage('RUN TESTS IN PARALLEL A') {
                     steps {
-                        echo "RUN TESTS IN PARALLEL A"
-                        sh 'sh createTestPlan.sh true'
-                        sh 'npx cypress run --config-file cypress-custom.json --record --key f0e802be-02b5-42f2-9c22-e61d7c44be18  --parallel'
+                         script {
+                            echo "RUN TESTS IN PARALLEL A"
+                             docker.image('cypress/included:3.2.0').inside('--ipc=host -u root --entrypoint=""')  {
+                                   sh("npx cypress run --config-file cypress-custom.json --record --key f0e802be-02b5-42f2-9c22-e61d7c44be18  --parallel")
+                             }
+                         }
+//                         echo "RUN TESTS IN PARALLEL A"
+//                         sh 'sh createTestPlan.sh true'
+//                         sh 'npx cypress run --config-file cypress-custom.json --record --key f0e802be-02b5-42f2-9c22-e61d7c44be18  --parallel'
                     }
                }
 

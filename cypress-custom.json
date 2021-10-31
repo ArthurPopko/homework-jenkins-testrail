@@ -1,4 +1,6 @@
 {
+  "video": false,
+  "chromeWebSecurity": false,
   "baseUrl": "https://reqres.in",
   "integrationFolder": "cypress/integration",
   "projectId": "kakadw",
@@ -9,7 +11,7 @@
   },
   "reporter": "cypress-testrail-logs-screenshots",
   "reporterOptions": { 
-	"testPlanId": 766,
+	"testPlanId": 834,
     "active": true,
     "domain": "integrationcypress.testrail.io",
     "username": "arth.p@mail.ru",

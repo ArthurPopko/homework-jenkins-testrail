@@ -1,4 +1,6 @@
 {
+  "video": false,
+  "chromeWebSecurity": false,
   "baseUrl": "https://reqres.in",
   "integrationFolder": "cypress/integration",
   "projectId": "kakadw",
