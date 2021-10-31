@@ -19,8 +19,7 @@ pipeline {
                 stage('RUN TESTS IN PARALLEL A') {
                     steps {
                          script {
-                            echo "RUN TESTS IN PARALLEL A"
-                             docker.image('cypress/included:3.2.0').inside('--ipc=host -u root --entrypoint=""')  {
+                             docker.image('cypress/included:3.2.0').inside('--platform linux/amd64 -it -v $PWD:/e2e -w /e2e --entrypoint=cypress cypress/included:3.2.0')  {
                                    sh("npx cypress run --config-file cypress-custom.json --record --key f0e802be-02b5-42f2-9c22-e61d7c44be18  --parallel")
                              }
                          }
