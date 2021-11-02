@@ -4,24 +4,24 @@ import {getPetRequestData} from "../helper/requestsDataGenerator"
 
 describe('Tests for Delete pet endpoint', () => {
     let petData = getPetRequestData()
-    it('Positive: Delete pet C13', () => {
-        createPet(petData).then(response => {
-            deletePet(response.body.id).then(response => {
-                expect(response.status).to.eq(200);
-            })
-        })
-    });
-    it('Positive: Delete the same pet entity twice C14', () => {
-        createPet(getPetRequestData()).then(response => {
-            let petId = response.body.id
-            deletePet(petId).then(response => {
-                expect(response.status).to.eq(200);
-                deletePet(petId, false).then(response => {
-                    expect(response.status).to.eq(404, 'Pet not found');
-                })
-            })
-        })
-    });
+    // it('Positive: Delete pet C13', () => {
+    //     createPet(petData).then(response => {
+    //         deletePet(response.body.id).then(response => {
+    //             expect(response.status).to.eq(200);
+    //         })
+    //     })
+    // });
+    // it('Positive: Delete the same pet entity twice C14', () => {
+    //     createPet(getPetRequestData()).then(response => {
+    //         let petId = response.body.id
+    //         deletePet(petId).then(response => {
+    //             expect(response.status).to.eq(200);
+    //             deletePet(petId, false).then(response => {
+    //                 expect(response.status).to.eq(404, 'Pet not found');
+    //             })
+    //         })
+    //     })
+    // });
     it('Negative: Nonexistent id C15', () => {
         deletePet(Chance().integer(), false).then(response => {
             expect(response.status).to.eq(404);
